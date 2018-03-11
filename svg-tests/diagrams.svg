@@ -1,0 +1,68 @@
+<svg  height="500" width="700"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg">
+  <style>
+    /* <![CDATA[ */
+    .generator {
+      fill: transparent;
+      stroke: black;
+      stroke-width: 5;
+    };
+    /* ]]> */
+  </style>
+  <defs>
+    <g id="Id" class="generator">
+      <path d="M 0 50 L 100 50" />
+    </g>
+
+    <g id="Twist" class="generator">
+      <path d="M 0 0     C 50 0    50 100  100 100" />
+      <path d="M 0 100   C 50 100  50 0    100 0" />
+    </g>
+
+    <g id="Zero" class="generator">
+      <circle cx="80" cy="50" r="20" />
+      <path d="M 0 50 L 60 50" />
+    </g>
+
+    <g id="Discard" class="generator">
+      <circle cx="20" cy="50" r="20" fill="black" />
+      <path d="M 20 50 L 100 50" />
+    </g>
+
+    <!-- Helpers for Add and Copy -->
+    <circle id="center-circle" cx="50" cy="50" r="20" />
+    <mask id="clip-circle" >
+      <rect x="-50" y="-50" width="200" height="200" fill="white" />
+      <circle cx="50" cy="50" r="20" fill="black" />
+    </mask>
+
+    <!-- TODO :( -->
+    <g id="Add" class="generator">
+      <use href="#center-circle" />
+      <path d="M 0  0   C 50  0   50 50 50 50" mask="url(#clip-circle)" />
+      <path d="M 0 100  C 50 100  50 50 50 50" mask="url(#clip-circle)" />
+      <path d="M 70 50 L 100 50" />
+    </g>
+
+    <g id="Copy" class="generator">
+      <use href="#center-circle" fill="black" />
+      <path d="M 50 50 C 50 50  50 0   100 0  " />
+      <path d="M 50 50 C 50 50  50 100 100 100" />
+      <path d="M 0 50 L 30 50" />
+    </g>
+  </defs>
+
+  <g transform="scale(1)">
+    <!-- background -->
+    <rect height="100%" width="100%" fill="grey" />
+
+    <use x="100" y="100" href="#Id" />
+    <use x="300" y="100" href="#Twist" />
+    <use x="100" y="300" href="#Zero" />
+    <use x="300" y="300" href="#Discard" />
+
+    <use x="500" y="100" href="#Add" />
+    <use x="500" y="300" href="#Copy" />
+  </g>
+</svg>
