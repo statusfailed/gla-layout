@@ -5,6 +5,20 @@ An algorithm and demo for laying out
 string diagrams in the browser using the
 [miso framework](https://github.com/dmjio/miso).
 
+# Example Images
+
+Right-hand side of [rule "B1"](https://graphicallinearalgebra.net/2015/05/16/natural-numbers-diagrammatically/)
+
+![Rule B1](./propaganda/ruleB1.png)
+
+Left-hand-side of [rule "Assoc"](https://graphicallinearalgebra.net/2015/05/16/natural-numbers-diagrammatically/)
+
+![Rule Assoc](./propaganda/ruleAssocLHS.png)
+
+Natural number "3" as a diagram
+
+![Natural number 3](./propaganda/nat3.png)
+
 # Building & running the demo
 
 Build with [nix](https://nixos.org/nix/):
